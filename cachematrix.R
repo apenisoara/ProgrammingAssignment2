@@ -22,11 +22,11 @@ makeCacheMatrix <- function(x = matrix()) {
 
 cacheSolve <- function(x, ...) {
     # Try to get the solution from the cache
-    ret <- x$getsol()
-    if(!is.null(ret)) {
+    cached <- x$getsol()
+    if(!is.null(cached)) {
         # found cached value -- return data immediately
         message("==> Cached data !")
-        return(ret)
+        return(cached)
     }
     
     # Go the hard way -- calculate the value
